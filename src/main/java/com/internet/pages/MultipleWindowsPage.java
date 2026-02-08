@@ -17,7 +17,7 @@ public class MultipleWindowsPage extends BasePage {
     }
 
     @FindBy(linkText = "Click Here")
-    public WebElement clickHereLink;
+    WebElement clickHereLink;
 
     public MultipleWindowsPage openNewWindow() {
         click(clickHereLink);

@@ -15,7 +15,7 @@ public class JavaScriptAlertsPage extends BasePage {
     }
 
     @FindBy(xpath = "//button[text()='Click for JS Alert']")
-    public WebElement jsAlertButton;
+    WebElement jsAlertButton;
 
     public JavaScriptAlertsPage clickJsAlert() {
         click(jsAlertButton);
@@ -24,7 +24,7 @@ public class JavaScriptAlertsPage extends BasePage {
     }
 
     @FindBy(xpath = "//button[text()='Click for JS Confirm']")
-    public WebElement jsConfirmButton;
+    WebElement jsConfirmButton;
 
     public JavaScriptAlertsPage clickJsConfirm(String result) {
         click(jsConfirmButton);
@@ -39,7 +39,7 @@ public class JavaScriptAlertsPage extends BasePage {
     }
 
     @FindBy(xpath = "//button[text()='Click for JS Prompt']")
-    public WebElement jsPromptButton;
+    WebElement jsPromptButton;
 
     public JavaScriptAlertsPage sendTextToPrompt(String text) {
         click(jsPromptButton);
@@ -50,7 +50,7 @@ public class JavaScriptAlertsPage extends BasePage {
     }
 
     @FindBy(id = "result")
-    public WebElement resultText;
+    WebElement resultText;
 
     public JavaScriptAlertsPage verifyResult(String expectedText) {
         Assertions.assertTrue(
