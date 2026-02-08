@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(linkText = "JavaScript Alerts")
-    public WebElement jsAlertsLink;
+    WebElement jsAlertsLink;
 
     public JavaScriptAlertsPage goToJavaScriptAlerts() {
         click(jsAlertsLink);
@@ -25,7 +25,7 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(linkText = "Multiple Windows")
-    public WebElement multipleWindowsLink;
+    WebElement multipleWindowsLink;
 
     public MultipleWindowsPage goToMultipleWindows() {
         click(multipleWindowsLink);
@@ -33,7 +33,7 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(linkText = "Nested Frames")
-    public WebElement nestedFrames;
+    WebElement nestedFrames;
 
     public NestedFramesPage goToNestedFrames() {
         click(nestedFrames);
@@ -41,10 +41,34 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(linkText = "Dropdown")
-    public WebElement dropdown;
+    WebElement dropdown;
 
     public DropdownPage goToDropdown() {
         click(dropdown);
         return new DropdownPage(driver);
+    }
+
+    @FindBy(linkText = "Drag and Drop")
+    WebElement dragAndDrop;
+
+    public DragAndDropPage goToDragAndDrop() {
+        click(dragAndDrop);
+        return new DragAndDropPage(driver);
+    }
+
+    @FindBy(linkText = "Horizontal Slider")
+    WebElement horizontalSlider;
+
+    public HorizontalSliderPage goToHorizontalSlider() {
+        click(horizontalSlider);
+        return new HorizontalSliderPage(driver);
+    }
+
+    @FindBy(linkText = "Hovers")
+    WebElement hoversLink;
+
+    public HoversPage goToHovers() {
+        click(hoversLink);
+        return new HoversPage(driver);
     }
 }

@@ -1,42 +1,34 @@
 package com.internet.tests;
 
+import com.internet.core.TestBase;
 import com.internet.pages.HomePage;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class JavaScriptAlertsTest {
-    WebDriver driver;
-    HomePage home;
-
-    @BeforeEach
-    public void setUp() {
-        this.driver = new ChromeDriver();
-        this.home = (new HomePage(this.driver)).open();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        this.driver.quit();
-    }
+public class JavaScriptAlertsTest extends TestBase {
 
     @Test
-    public void jsAlertTest() {
-        this.home.goToJavaScriptAlerts().clickJsAlert()
+    void jsAlertTest() {
+        new HomePage(driver)
+                .open()
+                .goToJavaScriptAlerts()
+                .clickJsAlert()
                 .verifyResult("You successfully clicked");
     }
 
     @Test
-    public void jsConfirmTest() {
-        this.home.goToJavaScriptAlerts().clickJsConfirm("Ok")
+    void jsConfirmTest() {
+        new HomePage(driver)
+                .open()
+                .goToJavaScriptAlerts()
+                .clickJsConfirm("Ok")
                 .verifyResult("You clicked: Ok");
     }
 
     @Test
-    public void jsPromptTest() {
-        this.home.goToJavaScriptAlerts()
+    void jsPromptTest() {
+        new HomePage(driver)
+                .open()
+                .goToJavaScriptAlerts()
                 .sendTextToPrompt("QA is the best!")
                 .verifyResult("QA is the best!");
     }

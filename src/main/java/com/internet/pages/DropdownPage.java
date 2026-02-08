@@ -1,7 +1,7 @@
 package com.internet.pages;
 
 import com.internet.core.BasePage;
-import org.assertj.core.api.SoftAssertions;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,16 +17,14 @@ public class DropdownPage extends BasePage {
     WebElement dropdown;
 
     public DropdownPage selectOption(String option) {
-
-        SoftAssertions softly = new SoftAssertions();
-
         Select select = new Select(dropdown);
         select.selectByVisibleText(option);
 
-        softly.assertThat(select.getFirstSelectedOption().getText())
-                .isEqualTo(option);
-
-        softly.assertAll();
+        Assertions.assertEquals(
+                option,
+                select.getFirstSelectedOption().getText(),
+                "Selected option is incorrect"
+        );
         return this;
     }
 }

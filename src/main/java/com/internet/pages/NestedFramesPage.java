@@ -13,31 +13,24 @@ public class NestedFramesPage extends BasePage {
 
     public NestedFramesPage verifyNestedFrames() {
 
-        // TOP → LEFT
         driver.switchTo().frame("frame-top");
         driver.switchTo().frame("frame-left");
-
-        WebElement body = driver.findElement(By.tagName("body"));
-        softly.assertThat(body.getText())
-                .as("Verify LEFT frame text")
+        softly.assertThat(driver.findElement(By.tagName("body")).getText())
                 .contains("LEFT");
 
-        // TOP → MIDDLE
         driver.switchTo().parentFrame();
         driver.switchTo().frame("frame-middle");
-
-        body = driver.findElement(By.tagName("body"));
-        softly.assertThat(body.getText())
-                .as("Verify MIDDLE frame text")
+        softly.assertThat(driver.findElement(By.tagName("body")).getText())
                 .contains("MIDDLE");
 
-        // BOTTOM
+        driver.switchTo().parentFrame();
+        driver.switchTo().frame("frame-right");
+        softly.assertThat(driver.findElement(By.tagName("body")).getText())
+                .contains("RIGHT");
+
         driver.switchTo().defaultContent();
         driver.switchTo().frame("frame-bottom");
-
-        body = driver.findElement(By.tagName("body"));
-        softly.assertThat(body.getText())
-                .as("Verify BOTTOM frame text")
+        softly.assertThat(driver.findElement(By.tagName("body")).getText())
                 .contains("BOTTOM");
 
         assertAll();
