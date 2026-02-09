@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ContextMenuTest extends TestBase {
+
+
     @Test
     public void contextMenuScenarioTest(){
         // 1. Зайти на страницу Context Menu
