@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 
 public abstract class BasePage {
@@ -16,9 +18,11 @@ public abstract class BasePage {
     protected WebDriver driver;
     public static SoftAssertions softly;
     public static Actions actions;
+    public static JavascriptExecutor js;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        js = (JavascriptExecutor) driver;
         softly = new SoftAssertions(); // инициализация на каждую страницу
         actions = new Actions(driver);
         PageFactory.initElements(driver, this);
@@ -44,6 +48,20 @@ public abstract class BasePage {
 
     public static void assertAll() {
         softly.assertAll();
+    }
+    public void verifyLinks(String linkUrl) {
+        try {
+            URL url = new URL(linkUrl);
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("HEAD");
+            http.connect();
+            int responseCode = http.getResponseCode();
+            if (responseCode >= 400) {
+                softly.fail("BROKEN LINK: " + linkUrl + " -> Response code: " + responseCode);
+            }
+        } catch (Exception e) {
+            softly.fail("Exception for URL: " + linkUrl + " -> " + e.getMessage());
+        }
     }
 
 }

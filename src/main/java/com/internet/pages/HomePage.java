@@ -71,4 +71,12 @@ public class HomePage extends BasePage {
         click(hoversLink);
         return new HoversPage(driver);
     }
+
+    @FindBy(css = "a[href='/broken_images']")
+    WebElement brokenImagesLink;
+
+    public BrokenImagesPage goToBrokenImagesPage() {
+        click(brokenImagesLink);
+        return new BrokenImagesPage(driver);
+    }
 }
