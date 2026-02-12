@@ -1,0 +1,13 @@
+com\internet\pages\BrokenImagesPage.class
+com\internet\pages\JavaScriptAlertsPage.class
+com\internet\pages\NestedFramesPage.class
+com\internet\pages\DragAndDropPage.class
+com\internet\pages\HomePage.class
+com\internet\pages\ContextMenuPage.class
+com\internet\core\BasePage.class
+com\internet\pages\HorizontalSliderPage.class
+com\internet\pages\MultipleWindowsPage.class
+com\internet\core\WebDriverFactory.class
+com\internet\pages\FileUploaderPage.class
+com\internet\pages\HoversPage.class
+com\internet\pages\DropdownPage.class

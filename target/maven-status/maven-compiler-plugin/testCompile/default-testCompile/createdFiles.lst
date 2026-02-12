@@ -1,0 +1,12 @@
+com\internet\tests\DropdownTest.class
+com\internet\tests\FileUploaderTest.class
+com\internet\tests\DragAndDropTest.class
+com\internet\tests\NestedFramesTest.class
+com\internet\utils\MyTestWatcher.class
+com\internet\tests\ContextMenuTest.class
+com\internet\core\TestBase.class
+com\internet\tests\HorizontalSliderTest.class
+com\internet\tests\BrokenImagesTest.class
+com\internet\tests\HoversTest.class
+com\internet\tests\JavaScriptAlertsTest.class
+com\internet\tests\MultipleWindowsTest.class
