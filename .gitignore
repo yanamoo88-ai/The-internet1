@@ -1,4 +1,4 @@
-target/
+
 
 ### IntelliJ IDEA ###
 
@@ -6,4 +6,9 @@ target/
 *.iws
 *.iml
 *.ipr
+
+*.log
+*.png
+
+
 

@@ -2,11 +2,13 @@ package com.internet.tests;
 
 import com.internet.core.TestBase;
 import com.internet.pages.HomePage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class HorizontalSliderTest extends TestBase {
 
     @Test
+    @Tag("smoky")
     public void horizontalSliderTest() {
         new HomePage(driver)
                 .open()
